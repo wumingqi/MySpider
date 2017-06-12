@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace paqu
+namespace Paqu
 {
     class Item
     {
@@ -25,7 +25,12 @@ namespace paqu
     {
         static void Main(string[] args)
         {
-
+            if (args.Length == 0)
+                return;
+            int page;
+            if(!int.TryParse(args[0], out page))
+                return;
+            new Spider(args[0], page).Go();
         }
     }
 }
